@@ -15,10 +15,13 @@ async function connectToDatabase(uri) {
     return db;
 }
 
-module.exports = async (req, res) => {
+exports.handler = function (event, context, callback) {
     const db = await connectToDatabase(process.env.MONGODB_URI);
     const collection = await db.collection('therms');
     const therms = await collection.find({}).toArray();
 
-    res.status(200).json(therms);
+    callback(null, {
+        statusCode: 200,
+        body: therms
+    });
 }
