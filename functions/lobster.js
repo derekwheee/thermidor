@@ -20,8 +20,8 @@ exports.handler = async function (event, context, callback) {
     const collection = await db.collection('therms');
     const therms = await collection.find({}).toArray();
 
-    callback(null, {
+    return {
         statusCode: 200,
-        body: therms
-    });
+        body: JSON.stringify(therms)
+    };
 }
