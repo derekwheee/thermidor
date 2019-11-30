@@ -1,6 +1,6 @@
 {
     "name": "thermidor",
-    "version": "0.0.1",
+    "version": 1,
     "env": {
         "MONGODB_URI": "@mongodb-uri"
     }
