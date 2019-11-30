@@ -27,7 +27,7 @@ fetchTemps();
 setInterval(fetchTemps, 5000);
 
 async function fetchTemps() {
-    const response = await fetch('./data/temps.json');
+    const response = await fetch('/api/lobster');
     const json = await response.json();
 
     renderCharts(parseData(json));
