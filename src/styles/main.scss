@@ -15,13 +15,20 @@ body {
     min-height: 100vh;
     padding: 0 0 5em;
     margin: 0;
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: "Ubuntu Mono", monospace;
     font-size: 1.25em;
     line-height: 1.5em;
+    background: #fff;
+    color: #222;
+
+    &.is-night {
+        background: #222;
+        color: #fff;
+    }
 }
 
 .t-header {
-    background: #333;
+    background: #222;
 
     &_link {
         display: block;
@@ -41,8 +48,9 @@ body {
 
 .t-timestamp {
     display: flex;
-    justify-content: space-around;
-    margin: 1.3333em;
+    justify-content: space-between;
+    max-width: 20em;
+    margin: 1em;
 
     &_date {
         padding: 0 1em 0 0;
@@ -52,21 +60,40 @@ body {
         padding: 0 1em;
 
         &:before {
-            content: '/';
+            content: "/";
             position: relative;
             left: -0.5em;
         }
     }
 }
 
+.t-locations {
+
+    @media screen and (min-width: 900px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .t-location {
     position: relative;
+    flex-basis: 25em;
+    flex-grow: 1;
     margin: 1em 0;
+
+    @media screen and (min-width: 900px) {
+        margin: 1em;
+    }
 
     &_header {
         position: relative;
         padding: 1em;
         background: #f7f7f7;
+
+        .is-night & {
+            background: #000;
+            color: #fff;
+        }
     }
 
     &_toggle {
@@ -79,41 +106,46 @@ body {
         font-size: 2em;
         transform: translateY(-50%);
 
+        @media screen and (min-width: 900px) {
+            display: none;
+        }
+
         &:focus {
             color: rgb(51, 51, 255);
             outline: none;
         }
     }
 
-    &.is-collapsed {
+    @media screen and (max-width: 900px) {
+        &.is-collapsed {
+            .t-status {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 2em;
 
-        .t-status {
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 2em;
-            
-            &_temperature {
-                display: inline-block;
-                font-size: 1.5rem;
+                &_temperature {
+                    display: inline-block;
+                    font-size: 1.5rem;
 
-                &:after {
-                    position: static;
-                    font-size: inherit;
+                    &:after {
+                        position: static;
+                        font-size: inherit;
+                    }
                 }
-            }
 
-            &_humidity {
-                display: inline-block;
-                font-size: 1.25rem;
-            }
+                &_humidity {
+                    display: inline-block;
+                    font-size: 1.25rem;
+                }
 
-            &_updated {
-                display: none;
-            }
+                &_updated {
+                    display: none;
+                }
 
-            &_graph {
-                display: none;
+                &_graph {
+                    display: none;
+                }
             }
         }
     }
@@ -125,14 +157,14 @@ body {
     padding: 1em;
 
     &_temperature {
-        flex-basis: 66.67%;
+        flex-basis: 3em;
         position: relative;
         font-size: 4em;
         font-weight: bold;
         line-height: 1;
 
         &:after {
-            content: '/';
+            content: "/";
             position: absolute;
             top: 0em;
             right: 0.5em;
@@ -142,19 +174,19 @@ body {
     }
 
     &_humidity {
-        flex-basis: 33.33%;
         font-size: 2em;
         line-height: 1;
     }
 
     &_updated {
+        flex-basis: 100%;
         font-size: 0.7em;
         opacity: 0.75;
     }
 
     &_graph {
         position: relative;
-        width: calc(100vw - 2em);
+        width: 100%;
         height: 10em;
         margin: 1em 0;
         border-left: 0.25em solid rgba(0, 0, 0, 0.1);

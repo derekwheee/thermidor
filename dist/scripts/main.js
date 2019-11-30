@@ -23,6 +23,20 @@ toggles.forEach((toggle) => {
     });
 });
 
+updateTimestamp();
+setInterval(updateTimestamp, 10000)
+
+function updateTimestamp() {
+    const date = document.querySelector('.t-timestamp_date');
+    const time = document.querySelector('.t-timestamp_time');
+    const hour = Number(moment().format('h'));
+    const ampm = moment().format('A');
+    const emoji = hour > 5 && ampm === 'AM' || hour < 9 && ampm === 'PM' || hour === 12 && ampm === 'PM' ? '☀️' : '🌑';
+
+    date.innerHTML = moment().format('MMMM Do');
+    time.innerHTML = `${moment().format('h:mm A')} ${emoji}`;
+}
+
 fetchTemps();
 setInterval(fetchTemps, 5000);
 
