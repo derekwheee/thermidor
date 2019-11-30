@@ -1,0 +1,9 @@
+{
+    "name": "thermidor",
+    "short_name": "thermidor",
+    "lang": "en-US",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "#333333"
+}

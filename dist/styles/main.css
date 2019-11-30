@@ -1,0 +1,126 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  position: relative;
+  min-height: 100vh;
+  padding: 0 0 5em;
+  margin: 0;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.25em;
+  line-height: 1.5em; }
+
+.t-header {
+  background: #333; }
+  .t-header_link {
+    display: block;
+    padding: 1em;
+    font-family: monospace;
+    font-size: 1.25em;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: white; }
+    .t-header_link:focus {
+      text-decoration: underline; }
+
+.t-timestamp {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.3333em; }
+  .t-timestamp_date {
+    padding: 0 1em 0 0; }
+  .t-timestamp_time {
+    padding: 0 1em; }
+    .t-timestamp_time:before {
+      content: '/';
+      position: relative;
+      left: -0.5em; }
+
+.t-location {
+  position: relative;
+  margin: 1em 0; }
+  .t-location_header {
+    position: relative;
+    padding: 1em;
+    background: #f7f7f7; }
+  .t-location_toggle {
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 0.25em;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 2em;
+    transform: translateY(-50%); }
+    .t-location_toggle:focus {
+      color: #3333ff;
+      outline: none; }
+  .t-location.is-collapsed .t-status {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 2em; }
+    .t-location.is-collapsed .t-status_temperature {
+      display: inline-block;
+      font-size: 1.5rem; }
+      .t-location.is-collapsed .t-status_temperature:after {
+        position: static;
+        font-size: inherit; }
+    .t-location.is-collapsed .t-status_humidity {
+      display: inline-block;
+      font-size: 1.25rem; }
+    .t-location.is-collapsed .t-status_updated {
+      display: none; }
+    .t-location.is-collapsed .t-status_graph {
+      display: none; }
+
+.t-status {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em; }
+  .t-status_temperature {
+    flex-basis: 66.67%;
+    position: relative;
+    font-size: 4em;
+    font-weight: bold;
+    line-height: 1; }
+    .t-status_temperature:after {
+      content: '/';
+      position: absolute;
+      top: 0em;
+      right: 0.5em;
+      font-size: 0.5em;
+      font-weight: normal; }
+  .t-status_humidity {
+    flex-basis: 33.33%;
+    font-size: 2em;
+    line-height: 1; }
+  .t-status_updated {
+    font-size: 0.7em;
+    opacity: 0.75; }
+  .t-status_graph {
+    position: relative;
+    width: calc(100vw - 2em);
+    height: 10em;
+    margin: 1em 0;
+    border-left: 0.25em solid rgba(0, 0, 0, 0.1); }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 3em;
+  padding: 1em;
+  background: #f7f7f7;
+  font-size: 0.75em;
+  text-transform: lowercase;
+  text-align: center;
+  color: #888; }

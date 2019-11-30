@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>thermidor</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="dist/styles/main.css">
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#333333">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="t-header">
+        <a href="/" class="t-header_link">Thermidor</a>
+    </header>
+
+    <div class="t-timestamp">
+        <div class="t-timestamp_date">November 29, 2019</div>
+        <div class="t-timestamp_time">4:59pm</div>
+    </div>
+
+    <div class="t-location is-collapsed">
+        <div class="t-location_header">
+            Outside
+            <button class="t-location_toggle">+</button>
+        </div>
+        <div class="t-status">
+            <div class="t-status_temperature">31°</div>
+            <div class="t-status_humidity">23%</div>
+            <div class="t-status_updated">5 minutes ago</div>
+            <div class="t-status_graph">
+                <canvas data-location="outside"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="t-location is-collapsed">
+        <div class="t-location_header">
+            Living Room
+            <button class="t-location_toggle">+</button>
+        </div>
+        <div class="t-status">
+            <div class="t-status_temperature">69°</div>
+            <div class="t-status_humidity">32%</div>
+            <div class="t-status_updated">34 seconds ago</div>
+            <div class="t-status_graph">
+                <canvas data-location="livingroom"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="t-location is-collapsed">
+        <div class="t-location_header">
+            Office
+            <button class="t-location_toggle">+</button>
+        </div>
+        <div class="t-status">
+            <div class="t-status_temperature">69°</div>
+            <div class="t-status_humidity">32%</div>
+            <div class="t-status_updated">34 seconds ago</div>
+            <div class="t-status_graph">
+                <canvas data-location="office"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="t-location is-collapsed">
+        <div class="t-location_header">
+            Shop
+            <button class="t-location_toggle">+</button>
+        </div>
+        <div class="t-status">
+            <div class="t-status_temperature">62°</div>
+            <div class="t-status_humidity">25%</div>
+            <div class="t-status_updated">37 seconds ago</div>
+            <div class="t-status_graph">
+                <canvas data-location="shop"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <footer>Made with 🍕</footer>
+
+    <script src="node_modules/chart.js/dist/Chart.js"></script>
+    <script src="dist/scripts/main.js"></script>
+
+</body>
+
+</html>
