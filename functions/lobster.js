@@ -15,7 +15,7 @@ async function connectToDatabase(uri) {
     return db;
 }
 
-exports.handler = function (event, context, callback) {
+exports.handler = async function (event, context, callback) {
     const db = await connectToDatabase(process.env.MONGODB_URI);
     const collection = await db.collection('therms');
     const therms = await collection.find({}).toArray();

@@ -27,7 +27,7 @@ fetchTemps();
 setInterval(fetchTemps, 5000);
 
 async function fetchTemps() {
-    const response = await fetch('/functions/lobster');
+    const response = await fetch('/.netlify/functions/lobster');
     const json = await response.json();
 
     renderCharts(parseData(json));
